@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EMI Calculator</title>
+    <meta
+        name="description"
+        content="Calculate your monthly EMI, total interest and total repayment amount easily."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header class="hero">
+            <div class="badge">FINANCE TOOL</div>
+
+            <h1>EMI Calculator</h1>
+
+            <p>
+                Calculate your monthly EMI, total interest and
+                total repayment amount instantly.
+            </p>
+        </header>
+
+
+        <!-- Loan Type -->
+        <section class="loan-types">
+
+            <button class="loan-type active" data-type="CAR">
+                <span>🚗</span>
+                <small>CAR</small>
+            </button>
+
+            <button class="loan-type" data-type="BIKE">
+                <span>🏍️</span>
+                <small>BIKE</small>
+            </button>
+
+            <button class="loan-type" data-type="MOBILE">
+                <span>📱</span>
+                <small>MOBILE</small>
+            </button>
+
+            <button class="loan-type" data-type="HOME">
+                <span>🏠</span>
+                <small>HOME</small>
+            </button>
+
+            <button class="loan-type" data-type="GOLD">
+                <span>🪙</span>
+                <small>GOLD</small>
+            </button>
+
+            <button class="loan-type" data-type="PERSONAL">
+                <span>💼</span>
+                <small>PERSONAL</small>
+            </button>
+
+        </section>
+
+
+        <!-- Calculator -->
+        <section class="calculator-card">
+
+            <div class="selected-loan">
+                <span id="selectedIcon">🚗</span>
+
+                <div>
+                    <span class="selected-label">Selected category</span>
+                    <strong id="selectedCategory">CAR Loan</strong>
+                </div>
+            </div>
+
+
+            <!-- Inputs -->
+            <div class="inputs-grid">
+
+                <div class="input-group">
+
+                    <div class="label-row">
+                        <label for="loanAmount">Loan amount</label>
+                        <span id="amountValue">₹5,00,000</span>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="loanAmount"
+                        min="10000"
+                        max="10000000"
+                        value="500000"
+                        step="5000"
+                    >
+
+                    <div class="input-box">
+                        <span>₹</span>
+
+                        <input
+                            type="number"
+                            id="loanAmountNumber"
+                            value="500000"
+                            min="10000"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <div class="label-row">
+                        <label for="interestRate">
+                            Annual interest rate (%)
+                        </label>
+
+                        <span id="interestValue">10%</span>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="interestRate"
+                        min="1"
+                        max="30"
+                        value="10"
+                        step="0.1"
+                    >
+
+                    <div class="input-box">
+                        <span>%</span>
+
+                        <input
+                            type="number"
+                            id="interestNumber"
+                            value="10"
+                            min="0"
+                            step="0.1"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <div class="label-row">
+                        <label for="tenure">Tenure (years)</label>
+                        <span id="tenureValue">5 Years</span>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="tenure"
+                        min="1"
+                        max="30"
+                        value="5"
+                        step="1"
+                    >
+
+                    <div class="input-box">
+                        <span>Yrs</span>
+
+                        <input
+                            type="number"
+                            id="tenureNumber"
+                            value="5"
+                            min="1"
+                            max="30"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Results -->
+            <div class="results">
+
+                <div class="result-main">
+
+                    <span class="result-label">
+                        Estimated monthly EMI
+                    </span>
+
+                    <strong id="monthlyEMI">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>Total interest payable</span>
+
+                    <strong id="totalInterest">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span>Total amount payable</span>
+
+                    <strong id="totalAmount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="duration">
+                Duration:
+                <strong id="duration">0 months</strong>
+            </div>
+
+
+            <!-- Actions -->
+            <div class="actions">
+
+                <button id="downloadPDF" class="action-btn primary">
+                    Download PDF
+                </button>
+
+                <button id="schedulePDF" class="action-btn secondary">
+                    Download payment schedule PDF
+                </button>
+
+            </div>
+
+
+            <div class="secondary-actions">
+
+                <button id="emailResult">
+                    Email result
+                </button>
+
+                <button id="smsResult">
+                    SMS result
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <p>
+                Built as a side quest project.
+            </p>
+
+            <p>
+                © <span id="year"></span> EMI Calculator
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
